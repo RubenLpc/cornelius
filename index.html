@@ -53,6 +53,16 @@
 /* no logo mark — just text wordmark */
 .brand-mark { display: none; }
 
+/* ---- Pinyon Script pe numele brandului ---- */
+.brand-txt b,
+.mnav-brand b{
+  font-family:"Pinyon Script",cursive !important;
+  font-weight:400 !important;
+  font-size:clamp(22px,2.8vw,26px) !important;
+  letter-spacing:0 !important;
+  line-height:1;
+}
+
 /* ---- navbar transparent state (over hero) ---- */
 .nav:not(.scrolled) .brand-txt b,
 .nav:not(.scrolled) .brand-txt span,
@@ -126,6 +136,17 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
 .hero h1{text-shadow:0 2px 30px rgba(20,12,6,.5)}
 .hero h1 em{color:#ECDCB0}
 .hero-sub{color:#fff;text-shadow:0 1px 18px rgba(20,12,6,.55)}
+
+/* ---- hero ghost button — auriu vizibil pe fundal întunecat ---- */
+.hero-cta .btn-ghost{
+  color:#ECDCB0;
+  border-color:rgba(236,220,176,.55);
+}
+.hero-cta .btn-ghost:hover{
+  color:#fff;
+  border-color:rgba(236,220,176,.9);
+  background:rgba(236,220,176,.12);
+}
 
 /* ---- hero calligraphic flourish ---- */
 .hero-flourish{
@@ -259,7 +280,14 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
 .fac-card:hover .fac-photo::after{opacity:1;transform:scale(1)}
 .fac-card:hover .fac-photo img{transform:scale(1.06)}
 .fac-body{padding:clamp(20px,2.4vw,30px)}
-.fac-body h3{font-size:clamp(20px,2.4vw,28px);margin:0 0 10px;color:var(--text)}
+.fac-body h3{
+  font-family:"Pinyon Script",cursive !important;
+  font-weight:400 !important;
+  font-size:clamp(28px,3.2vw,38px);
+  margin:0 0 12px;
+  color:var(--accent);
+  line-height:1.1;
+}
 .fac-body p{font-size:15.5px;color:var(--text-2);margin:0;line-height:1.6}
 .cap-badge{
   display:inline-flex;align-items:center;gap:9px;
@@ -285,6 +313,8 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
   width:1px;height:64px;background:linear-gradient(transparent,var(--border-2),transparent)}
 .stat-num{font-family:var(--font-display);font-size:clamp(40px,5vw,60px);color:var(--text);
   line-height:1;font-weight:500;font-variant-numeric:tabular-nums;display:inline-block}
+.stat-suffix{color:var(--accent);font-size:.75em;vertical-align:super;line-height:0}
+.stat-denom{font-size:.45em;color:var(--accent);font-weight:400;letter-spacing:0;vertical-align:middle}
 .stat-num::after{content:"";display:block;width:26px;height:1px;background:var(--accent);
   margin:15px auto 0;opacity:.9}
 .stat-label{margin-top:15px;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
@@ -311,8 +341,45 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
 .cta-visit .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
 .cta-visit .btn-ghost:hover{color:#fff;border-color:#fff;background:rgba(255,255,255,.1)}
 
-/* despre sign script flourish */
-.despre-sign{position:relative}
+/* ---- despre bullet list ---- */
+.despre-list{
+  list-style:none;padding:0;margin:22px 0 28px;
+  display:flex;flex-direction:column;gap:13px;
+}
+.despre-list li{
+  position:relative;padding-left:22px;
+  font-size:15.5px;color:var(--text-2);line-height:1.55;
+}
+.despre-list li::before{
+  content:"";position:absolute;left:0;top:8px;
+  width:7px;height:7px;
+  background:var(--accent);transform:rotate(45deg);
+  flex-shrink:0;
+}
+
+/* ---- despre pull-quote ---- */
+.despre-sign{
+  margin-top:8px;
+  padding:20px 24px;
+  border-left:2px solid var(--accent);
+  background:color-mix(in srgb,var(--accent) 6%,transparent);
+  border-radius:0 var(--r) var(--r) 0;
+}
+.despre-sign .despre-quote{
+  display:block;
+  font-family:var(--font-display);
+  font-size:clamp(19px,2.5vw,24px);
+  font-style:italic;
+  font-weight:500;
+  color:var(--accent);
+  line-height:1.6;margin-bottom:10px;
+  letter-spacing:.01em;
+}
+.despre-sig{
+  display:block;
+  font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-2);font-weight:600;
+}
 
 /* ---- programari card (no restaurant hours) ---- */
 .prog .prog-tag{display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:999px;
@@ -458,7 +525,7 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
   .lead{font-size:15.5px}
   .rev p{font-size:18px}
   /* atmosfera tags — fit better on phones */
-  .atmo-tags{gap:8px;margin-top:24px}
+  .atmo-tags{gap:8px;margin-top:24px;justify-content:center}
   .atmo-tags span{padding:7px 13px;font-size:12.5px;letter-spacing:.02em}
 }
 @media(max-width:480px){
@@ -474,6 +541,7 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
   .hero-cta .btn,.cta-actions .btn,.loc-actions .btn{padding:12px 16px;font-size:13.5px;white-space:nowrap}
   /* ghost button in hero needs visible border on dark bg */
   .hero-cta .btn-ghost{border-color:rgba(255,255,255,.7);color:#fff}
+
   /* extra bottom room so scroll cue doesn't overlap buttons */
   .hero{padding-bottom:80px}
   /* center button groups on mobile */
@@ -589,11 +657,11 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
     <p class="hero-sub reveal" style="--i:2">Cadrul perfect pentru cea mai frumoasă zi din viața voastră — pentru până la 300 de invitați.</p>
     <div class="hero-cta reveal" style="--i:3">
       <a class="btn btn-primary" href="#contact">Programează o vizită <span class="arr">→</span></a>
-      <a class="btn btn-ghost" href="#despre">Descoperă</a>
+      <a class="btn btn-ghost" href="#meniu">Descoperă</a>
     </div>
     <div class="hero-trust reveal" style="--i:4">
       <span class="hero-trust-stars">★★★★★</span>
-      <span>5,0 pe Google &nbsp;·&nbsp; 500+ nunți organizate</span>
+      <span>5,0 pe Google &nbsp;·&nbsp; 500+ nunți</span>
     </div>
   </div>
   <div class="hero-cue"><span>Scroll</span><span class="line"></span></div>
@@ -616,12 +684,19 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
         </div>
       </div>
       <div class="despre-body">
-        <span class="eyebrow script-eyebrow reveal">Despre noi</span>
-        <h2 class="reveal" style="--i:1">Un loc special pentru cel mai special moment.</h2>
+        <span class="eyebrow script-eyebrow reveal">Povestea noastră</span>
+        <h2 class="reveal" style="--i:1">Peste 15 ani de nunți frumoase în Rădăuți.</h2>
         <div class="ornament reveal" style="--i:1" aria-hidden="true"><span></span><i></i><span></span></div>
-        <p class="reveal" style="--i:2">Casa Cornelius este destinația perfectă pentru nunțile cu adevărat memorabile din zona Rădăuților. Cu o tradiție îndelungată în organizarea evenimentelor festive, vă punem la dispoziție un spațiu rafinat, gastronomie desăvârșită și un serviciu impecabil.</p>
-        <p class="reveal" style="--i:3">Fie că visați la o nuntă intimă sau la o festivitate grandioasă, echipa noastră dedicată va transforma fiecare detaliu al zilei voastre speciale într-o amintire de neuitat. Salonul nostru generos, curtea verde și foișorul pentru ceremonii religioase creează cadrul perfect pentru o zi perfectă.</p>
-        <div class="despre-sign reveal" style="--i:4">„Ziua voastră, povestea voastră, perfecțiunea noastră."<span>Echipa Casa Cornelius</span></div>
+        <p class="reveal" style="--i:2">Casa Cornelius s-a născut din dorința de a oferi ceva rar: un loc în care fiecare nuntă poartă amprenta familiei care o trăiește, nu a unui șablon. De la primul telefon până la ultimul surâs al serii, suntem alături de voi.</p>
+        <ul class="despre-list reveal" style="--i:3">
+          <li>Salon generos și curte verde pentru până la 300 de invitați</li>
+          <li>Foișor dedicat ceremoniilor religioase în aer liber</li>
+          <li>Echipă cu experiență, disponibilă de la planificare până la finalizare</li>
+        </ul>
+        <div class="despre-sign reveal" style="--i:4">
+          <span class="despre-quote">„Ziua voastră, povestea voastră."</span>
+          <span class="despre-sig">— Echipa Casa Cornelius</span>
+        </div>
       </div>
     </div>
   </div>
@@ -631,8 +706,7 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
 <section class="stats" data-screen-label="Casa Cornelius în cifre" aria-label="Casa Cornelius în cifre">
   <div class="wrap">
     <div class="stats-head reveal">
-      <span class="script-accent stats-script">În câteva cuvinte</span>
-      <div class="stats-sub">Casa Cornelius</div>
+      <span class="script-accent stats-script">Casa Cornelius în cifre</span>
     </div>
     <div class="stats-row" id="statsWrap">
       <div class="stat reveal" style="--i:0">
@@ -645,10 +719,10 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
       </div>
       <div class="stat reveal" style="--i:2">
         <div class="stat-num" data-count="300">0</div>
-        <div class="stat-label">Invitați capacitate</div>
+        <div class="stat-label">Locuri disponibile</div>
       </div>
       <div class="stat reveal" style="--i:3">
-        <div class="stat-num" data-count="5" data-decimals="1" data-suffix="★">0</div>
+        <div class="stat-num">5,0 <span class="stat-denom">/ 5</span></div>
         <div class="stat-label">Rating Google</div>
       </div>
     </div>
@@ -660,8 +734,8 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow script-eyebrow reveal">Gastronomie</span>
-      <h2 class="reveal" style="--i:1">Meniurile noastre</h2>
-      <p class="lead reveal" style="--i:2">Patru propuneri culinare, fiecare cu personalitate proprie. Apasă pe oricare meniu pentru a descoperi felurile de mâncare incluse, cu imagini.</p>
+      <h2 class="reveal" style="--i:1">O masă la înălțimea zilei voastre.</h2>
+      <p class="lead reveal" style="--i:2">Patru propuneri culinare, fiecare cu propria identitate — de la savori românești tradiționale până la gastronomie europeană rafinată.</p>
       <div class="ornament reveal" style="--i:2" aria-hidden="true"><span></span><i></i><span></span></div>
     </div>
     <div class="menu-grid">
@@ -673,17 +747,17 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
       <article class="mcard reveal" style="--i:1" data-menu="clasic" role="button" tabindex="0" aria-label="Deschide Meniu Clasic">
         <div class="ph" data-label="meniu clasic"><img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=700&q=72&auto=format&fit=crop" alt="Meniu Clasic"></div>
         <div class="mc-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
-        <div class="mc-body"><span class="mc-num">02</span><h3>Meniu Clasic</h3><p>Preparate rafinate, echilibrate și pline de eleganță — alegerea perfectă pentru orice celebrare.</p></div>
+        <div class="mc-body"><span class="mc-num">02</span><h3>Meniu Clasic</h3><p>Preparate rafinate și echilibrate, gătite cu ingrediente atent selecționate.</p></div>
       </article>
       <article class="mcard reveal" style="--i:2" data-menu="highclass" role="button" tabindex="0" aria-label="Deschide Meniu High Class">
         <div class="ph" data-label="meniu high class"><img src="https://images.unsplash.com/photo-1486428263684-28ec9e4f2584?w=700&q=72&auto=format&fit=crop" alt="Meniu High Class"></div>
         <div class="mc-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
-        <div class="mc-body"><span class="mc-num">03</span><h3>Meniu High Class</h3><p>Gastronomie de înaltă clasă cu ingrediente premium, pentru o experiență culinară de excepție.</p></div>
+        <div class="mc-body"><span class="mc-num">03</span><h3>Meniu High Class</h3><p>Ingrediente premium, tehnici fine de restaurant și prezentări de un rafinament desăvârșit.</p></div>
       </article>
       <article class="mcard reveal" style="--i:3" data-menu="modern" role="button" tabindex="0" aria-label="Deschide Meniu Modern">
         <div class="ph" data-label="meniu modern"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=700&q=72&auto=format&fit=crop" alt="Meniu Modern"></div>
         <div class="mc-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
-        <div class="mc-body"><span class="mc-num">04</span><h3>Meniu Modern</h3><p>Tendințe culinare contemporane cu influențe internaționale, pentru un gust al viitorului.</p></div>
+        <div class="mc-body"><span class="mc-num">04</span><h3>Meniu Modern</h3><p>Gastronomie contemporană cu influențe europene, pentru un meniu care surprinde și încântă.</p></div>
       </article>
     </div>
   </div>
@@ -708,9 +782,9 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
 <section class="sec" id="facilitati" data-screen-label="Facilități">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow script-eyebrow reveal">Ce oferim</span>
-      <h2 class="reveal" style="--i:1">Spații pentru fiecare moment</h2>
-      <p class="lead reveal" style="--i:2">Casa Cornelius pune la dispoziție cadre diverse pentru ca nunta voastră să fie completă — de la primul dans până la cununia religioasă.</p>
+      <span class="eyebrow script-eyebrow reveal">Spațiile noastre</span>
+      <h2 class="reveal" style="--i:1">Tot ce aveți nevoie, într-un singur loc.</h2>
+      <p class="lead reveal" style="--i:2">Casa Cornelius reunește sub același acoperiș tot ce aveți nevoie pentru o nuntă completă — de la cununia religioasă până la recepția festivă.</p>
       <div class="ornament reveal" style="--i:2" aria-hidden="true"><span></span><i></i><span></span></div>
     </div>
     <div class="fac-grid">
@@ -719,8 +793,8 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
           <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=900&q=72&auto=format&fit=crop" alt="Salon de nunți generos Casa Cornelius">
         </div>
         <div class="fac-body">
-          <h3>Salon Generos</h3>
-          <p>Un salon elegant și spațios, decorat cu rafinament și dotat cu tot confortul necesar. Scenă pentru muzică live, pistă de dans și posibilitate de aranjamente florale personalizate.</p>
+          <h3>Salon de Recepție</h3>
+          <p>Salon spațios cu scenă pentru orchestră, iluminat festiv și posibilitate de personalizare completă a decorurilor florale. Aranjat după viziunea voastră, de la mese la detalii.</p>
           <div class="cap-badge">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="8" r="3.4"/><path d="M21 21v-2a4 4 0 0 0-3-3.8"/></svg>
             Până la 300 de invitați
@@ -733,7 +807,11 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
         </div>
         <div class="fac-body">
           <h3>Curte Verde</h3>
-          <p>O grădină luxuriantă și bine întreținută, perfectă pentru fotografii de nuntă, cocktail în aer liber sau momente de relaxare între dansuri. Verdele naturii creează un fundal de poveste pentru amintirile voastre.</p>
+          <p>Grădină îngrijită, cu vegetație bogată și alei umbrite — spațiul ideal pentru fotografii de nuntă, primirea invitaților sau momente de răgaz în aer liber.</p>
+          <div class="cap-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 4-7 13-7 13S5 13 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Fotografii & primire invitați
+          </div>
         </div>
       </div>
       <div class="fac-card reveal" style="--i:2">
@@ -742,7 +820,11 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
         </div>
         <div class="fac-body">
           <h3>Terasă Elegantă</h3>
-          <p>Terasa amenajată cu gust este ideală pentru aperitivele de nuntă sau pentru un after-party sub stele. Spațiu versatil ce poate fi personalizat cu decoruri florale, lumânări și iluminat ambiant.</p>
+          <p>Terasă acoperită și amenajată cu gust, potrivită pentru primirea invitaților sau servirea aperitivelor. Poate fi decorată cu aranjamente florale și iluminat festiv după preferințele voastre.</p>
+          <div class="cap-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Aperitiv & primire
+          </div>
         </div>
       </div>
       <div class="fac-card reveal" style="--i:3">
@@ -750,8 +832,12 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
           <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=900&q=72&auto=format&fit=crop" alt="Foișor pentru ceremonii religioase">
         </div>
         <div class="fac-body">
-          <h3>Foișor pentru Ceremonii Religioase</h3>
-          <p>Un foișor special amenajat, cadru intim și solemn, destinat cununiei religioase. Ornamentat cu flori albe și detalii rafinate, oferă un decor de vis pentru momentul cel mai sfânt al nunții voastre.</p>
+          <h3>Foișor pentru Cununie</h3>
+          <p>Spațiu dedicat cununiei religioase, amenajat cu sobrietate și eleganță. Flori albe, liniște și un cadru solemn pentru cel mai sfânt moment al zilei voastre.</p>
+          <div class="cap-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"/></svg>
+            Cununie religioasă
+          </div>
         </div>
       </div>
     </div>
@@ -762,9 +848,9 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
 <section class="sec sec--alt" id="galerie" data-screen-label="Galerie">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow script-eyebrow reveal">Momente</span>
-      <h2 class="reveal" style="--i:1">Momente de neuitat</h2>
-      <p class="lead reveal" style="--i:2">O privire asupra spațiilor și atmosferei din Casa Cornelius. Atinge orice imagine pentru a o vedea mai mare.</p>
+      <span class="eyebrow script-eyebrow reveal">Din Casa Cornelius</span>
+      <h2 class="reveal" style="--i:1">O privire în lumea noastră.</h2>
+      <p class="lead reveal" style="--i:2">Câteva imagini care surprind spațiile, atmosfera și detaliile care fac diferența.</p>
       <div class="ornament reveal" style="--i:2" aria-hidden="true"><span></span><i></i><span></span></div>
     </div>
     <div class="gal" id="gal">
@@ -775,7 +861,6 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
       <div class="ph g5 reveal" data-label="receptie" style="--i:4"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1100&q=72&auto=format&fit=crop" alt=""><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2M11 8v6M8 11h6"/></svg></span></div>
       <div class="ph g6 reveal" data-label="aranjament masa" style="--i:5"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=700&q=72&auto=format&fit=crop" alt=""><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2M11 8v6M8 11h6"/></svg></span></div>
       <div class="ph g7 reveal" data-label="buchet mireasa" style="--i:6"><img src="https://images.unsplash.com/photo-1550005809-91ad75fb315f?w=700&q=72&auto=format&fit=crop" alt=""><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2M11 8v6M8 11h6"/></svg></span></div>
-      <div class="ph g8 reveal" data-label="receptie seara" style="--i:7"><img src="https://images.unsplash.com/photo-1561655885-d1d1c8f9f4c4?w=700&q=72&auto=format&fit=crop" alt=""><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2M11 8v6M8 11h6"/></svg></span></div>
     </div>
   </div>
 </section>
@@ -788,10 +873,10 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
   <div class="wrap">
     <div class="atmo-card">
       <span class="eyebrow script-eyebrow reveal">Atmosfera</span>
-      <h2 class="reveal" style="--i:1">Un cadru de poveste pentru ziua ta specială.</h2>
-      <p class="lead reveal" style="--i:2">Lumini calde, decoruri florale și un ambient rafinat care va face din nunta voastră un eveniment de neuitat. Echipa Casa Cornelius se ocupă de fiecare detaliu, pentru ca voi să vă bucurați de fiecare clipă.</p>
+      <h2 class="reveal" style="--i:1">Detaliile care fac diferența.</h2>
+      <p class="lead reveal" style="--i:2">Lumini calde, aranjamente florale și un serviciu atent — la Casa Cornelius, atmosfera este parte din experiență, nu un detaliu lăsat la urmă.</p>
       <div class="atmo-tags reveal" style="--i:3">
-        <span>Elegant</span><span>Rafinat</span><span>Personalizat</span><span>Memorabil</span><span>Exclusivist</span>
+        <span>Lumini calde</span><span>Flori albe</span><span>Serviciu dedicat</span><span>Spații generoase</span><span>Cadru solemn</span>
       </div>
     </div>
   </div>
@@ -811,20 +896,20 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
         <div class="rev-slide active">
           <span class="rev-q" aria-hidden="true">❝</span>
           <div class="stars">★★★★★</div>
-          <p>Am ales Casa Cornelius pentru nunta noastră și a fost cea mai bună decizie. Salonul era superb, mâncarea delicioasă și personalul extraordinar de amabil. Toți invitații noștri au rămas impresionați!</p>
-          <div class="who"><span class="av">AM</span><div><b>Ana &amp; Mihai</b><span>Miri · Rădăuți</span></div></div>
+          <p>La prima vizită am știut amândoi că acesta e locul. Mâncarea a întrecut orice așteptare — mai mulți invitați ne-au întrebat a doua zi unde am organizat nunta. Ne bucurăm că am ales Casa Cornelius.</p>
+          <div class="who"><span class="av">AM</span><div><b>Ana &amp; Mihai</b></div></div>
         </div>
         <div class="rev-slide">
           <span class="rev-q" aria-hidden="true">❝</span>
           <div class="stars">★★★★★</div>
-          <p>Curtea verde și foișorul pentru cununie au creat un cadru de vis. Totul a fost perfect organizat, de la meniu până la decoruri. Nu ne imaginam că ziua noastră va fi atât de frumoasă.</p>
-          <div class="who"><span class="av">RL</span><div><b>Raluca &amp; Liviu</b><span>Miri · Suceava</span></div></div>
+          <p>Cununia în foișor a fost exact ce ne-am dorit — liniște, flori albe și lumină naturală. Echipa a înțeles din prima ce vrem și nu a trebuit să repetăm nimic de două ori. Asta a contat enorm pentru noi.</p>
+          <div class="who"><span class="av">RL</span><div><b>Raluca &amp; Liviu</b></div></div>
         </div>
         <div class="rev-slide">
           <span class="rev-q" aria-hidden="true">❝</span>
           <div class="stars">★★★★★</div>
-          <p>Am organizat nunta cu aproape 280 de invitați și echipa Casa Cornelius a gestionat totul impecabil. Meniurile au fost excelente, terasa superbă. Recomandăm cu toată căldura!</p>
-          <div class="who"><span class="av">IC</span><div><b>Ioana &amp; Cristian</b><span>Miri · Rădăuți</span></div></div>
+          <p>280 de invitați nu sunt ușor de gestionat, dar echipa a făcut totul să pară simplu. Nu a lipsit nimic și nu a trebuit să ne ocupăm de niciun detaliu în ziua nunții — exact ce aveam nevoie.</p>
+          <div class="who"><span class="av">IC</span><div><b>Ioana &amp; Cristian</b></div></div>
         </div>
       </div>
       <div class="rev-nav">
@@ -848,11 +933,11 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
   <div class="wrap">
     <span class="cta-script reveal">Vă așteptăm</span>
     <div class="ornament reveal" style="--i:1" aria-hidden="true"><span></span><i></i><span></span></div>
-    <h2 class="reveal" style="--i:1">Programați o vizită la Casa Cornelius</h2>
-    <p class="reveal" style="--i:2">Veniți să descoperiți salonul, curtea verde și foișorul nostru. Vă ajutăm cu plăcere să planificați fiecare detaliu al zilei voastre speciale.</p>
+    <h2 class="reveal" style="--i:1">Primul pas e o vizită.</h2>
+    <p class="reveal" style="--i:2">Salonul, curtea verde și foișorul vă așteaptă. Sunați-ne și stabilim împreună o întâlnire — fără presiune, fără angajament.</p>
     <div class="cta-actions reveal" style="--i:3">
       <a class="btn btn-primary" href="tel:+40230123456">Sună acum <span class="arr">→</span></a>
-      <a class="btn btn-ghost" href="#contact">Vezi detalii contact</a>
+      <a class="btn btn-ghost" href="#contact">Scrie-ne</a>
     </div>
   </div>
 </section>
@@ -862,8 +947,8 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow script-eyebrow reveal">Să ne cunoaștem</span>
-      <h2 class="reveal" style="--i:1">Rezervați ziua voastră specială</h2>
-      <p class="lead reveal" style="--i:2">Suntem la dispoziția voastră pentru detalii, vizite și rezervări. Veniți să ne cunoaștem!</p>
+      <h2 class="reveal" style="--i:1">Hai să vorbim despre nunta voastră.</h2>
+      <p class="lead reveal" style="--i:2">Scrieți-ne sau sunați-ne — răspundem în cel mult 24 de ore și stabilim împreună o vizită fără niciun angajament.</p>
       <div class="ornament reveal" style="--i:2" aria-hidden="true"><span></span><i></i><span></span></div>
     </div>
     <div class="contact-grid">
@@ -874,7 +959,7 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
         <ul class="prog-list">
           <li>Vizionarea salonului, curții și foișorului</li>
           <li>Discuție despre meniu și aranjamente</li>
-          <li>Ofertă personalizată pentru ziua voastră</li>
+          <li>Ofertă personalizată în funcție de preferințele voastre</li>
         </ul>
         <a class="btn btn-primary" href="tel:+40230123456">Sună pentru programare <span class="arr">→</span></a>
       </div>
@@ -923,7 +1008,7 @@ html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
         <a class="brand" href="#acasa">
           <span class="brand-txt"><b>Casa Cornelius</b><span>Sală de Nunți · Rădăuți</span></span>
         </a>
-        <p>Sala de nunți de vis din Rădăuți — salon generos, curte verde, terasă și foișor pentru ceremonii, pentru până la 300 de invitați.</p>
+        <p>Sală de nunți în Rădăuți — salon generos, curte verde, terasă și foișor pentru cununie, pentru până la 300 de invitați.</p>
         <div class="socials">
           <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></a>
           <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9V7c0-1 .3-1.5 1.6-1.5H17V2.2C16.6 2.1 15.5 2 14.3 2 11.7 2 10 3.6 10 6.5V9H7.5v3.2H10V22h3.4v-9.8h2.5l.4-3.2H13.4Z"/></svg></a>
@@ -1004,7 +1089,7 @@ const menuData = {
   },
   highclass: {
     title: "Meniu High Class",
-    subtitle: "Gastronomie de înaltă clasă cu ingrediente premium",
+    subtitle: "Ingrediente premium și tehnici fine de restaurant",
     dishes: [
       { name: "Terrine de foie gras cu brioche", img: "https://images.unsplash.com/photo-1432139509613-5c4255815697?w=240&q=70&auto=format&fit=crop", desc: "Foie gras de rață maturată, pregătit în terrine și servit cu brioche prăjit în unt, confit de smochine și cristale de fleur de sel." },
       { name: "File de somon cu sos beurre blanc", img: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=240&q=70&auto=format&fit=crop", desc: "Somon atlantic proaspăt copt delicat în unt cu ierburi fine, servit cu sos beurre blanc cu lămâie și capere de Sicilia." },
@@ -1074,22 +1159,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ---- count-up statistics ---- */
   function animateCount(el) {
+    if (!el.dataset.count) return;
     const target = parseFloat(el.dataset.count);
     const dec = parseInt(el.dataset.decimals || '0', 10);
     const suffix = el.dataset.suffix || '';
     const prefix = el.dataset.prefix || '';
     if (reduce) {
       const finalStr = dec > 0 ? target.toFixed(dec).replace('.', ',') : String(Math.round(target));
-      el.textContent = prefix + finalStr + suffix;
+      const sfxR = suffix ? `<span class="stat-suffix">${suffix}</span>` : '';
+      el.innerHTML = prefix + finalStr + sfxR;
       return;
     }
+    const sfx = suffix ? `<span class="stat-suffix">${suffix}</span>` : '';
     const dur = 1700, start = performance.now();
     function tick(now) {
       const p = Math.min((now - start) / dur, 1);
       const eased = 1 - Math.pow(1 - p, 3);
       const val = target * eased;
       const str = dec > 0 ? val.toFixed(dec).replace('.', ',') : String(Math.round(val));
-      el.textContent = prefix + str + suffix;
+      el.innerHTML = prefix + str + sfx;
       if (p < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
