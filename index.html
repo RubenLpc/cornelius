@@ -1,0 +1,1147 @@
+<!doctype html>
+<html lang="ro" data-theme="pur">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Cornelius — Sală de Nunți · Rădăuți</title>
+<meta name="description" content="Casa Cornelius — sala de nunți de vis din Rădăuți. Salon generos pentru până la 300 de invitați, curte verde, terasă și foișor pentru ceremonii religioase.">
+
+<!-- favicon: monogram CC auriu -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23B89A58'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='40' font-style='italic' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#B89A58">
+
+<!-- Open Graph / share preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Casa Cornelius">
+<meta property="og:title" content="Casa Cornelius — Sală de Nunți · Rădăuți">
+<meta property="og:description" content="Nunta de vis în inima Rădăuților — salon elegant pentru până la 300 de invitați, curte verde, terasă și foișor pentru ceremonii religioase.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80&auto=format&fit=crop">
+<meta property="og:locale" content="ro_RO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Casa Cornelius — Sală de Nunți · Rădăuți">
+<meta name="twitter:description" content="Nunta de vis în inima Rădăuților — salon elegant, curte verde, terasă și foișor pentru ceremonii.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80&auto=format&fit=crop">
+<script>
+  window.TWEAK_DEFAULTS = {
+    "theme": "pur",
+    "accent": "#B89A58",
+    "radius": 18,
+    "anim": true
+  };
+  try{
+    var d=document.documentElement, t=window.TWEAK_DEFAULTS;
+    d.dataset.theme=t.theme;
+    if(t.accent) d.style.setProperty('--accent', t.accent);
+    if(t.accent) d.style.setProperty('--accent-2', '#9A7D3A');
+    if(t.radius!=null){ d.style.setProperty('--r', t.radius+'px'); }
+  }catch(e){}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+<style>
+/* ============================================================
+   CASA CORNELIUS — wedding overrides
+   ============================================================ */
+[data-theme="pur"]{
+  --accent: #B89A58;
+  --accent-2: #9A7D3A;
+  --on-accent: #ffffff;
+}
+
+/* no logo mark — just text wordmark */
+.brand-mark { display: none; }
+
+/* ---- navbar transparent state (over hero) ---- */
+.nav:not(.scrolled) .brand-txt b,
+.nav:not(.scrolled) .brand-txt span,
+.nav:not(.scrolled) .nav-phone{color:#fff}
+.nav:not(.scrolled) .hamb i{background:#fff}
+.nav:not(.scrolled) .nav-links a{color:rgba(255,255,255,.85)}
+.nav:not(.scrolled) .nav-links a:hover{color:#fff}
+.nav:not(.scrolled){background:linear-gradient(180deg,rgba(20,14,8,.55) 0%,transparent 100%);box-shadow:none !important;border-bottom:none !important;backdrop-filter:none;-webkit-backdrop-filter:none}
+
+/* ---- gold scrollbar (desktop) ---- */
+html{scrollbar-color:var(--accent) transparent;scrollbar-width:thin}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(var(--accent),var(--accent-2));
+  border-radius:99px;border:2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover{background:var(--accent-2)}
+
+/* ---- shine sweep on primary buttons ---- */
+.btn-primary{position:relative;overflow:hidden}
+.btn-primary::after{
+  content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);
+  transform:skewX(-18deg);transition:left .7s var(--ease);pointer-events:none;
+}
+.btn-primary:hover::after{left:130%}
+
+/* ---- Ken Burns on hero image ---- */
+.hero-bg img{animation:kenburns 22s ease-in-out infinite alternate;transform-origin:center}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.09)}}
+@media(prefers-reduced-motion:reduce){.hero-bg img{animation:none}}
+
+/* ---- gold hairline divider between alternating sections ---- */
+.sec--alt{position:relative}
+.sec--alt::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:min(360px,60%);height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  opacity:.5;
+}
+/* avoid double line: Meniuri follows Stats which already has a border */
+.stats + .sec--alt::before{display:none}
+
+
+/* ---- tap states on cards (native-app feel) ---- */
+.mcard,.fac-card{transition:transform .5s var(--ease),border-color .4s,box-shadow .5s}
+.mcard:active,.fac-card:active{transform:scale(.985)}
+
+/* ---- floating call button (mobile only) ---- */
+.call-fab{display:none}
+@media(max-width:920px){
+  .call-fab{
+    display:grid;place-items:center;
+    width:50px;height:50px;border-radius:50%;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    color:#fff;box-shadow:0 12px 30px -8px color-mix(in srgb,var(--accent) 60%,transparent);
+    transition:transform .3s var(--ease);
+  }
+  .call-fab svg{width:21px;height:21px}
+  .call-fab:active{transform:scale(.92)}
+}
+
+/* keep the floating share button hidden on mobile too (Contact has its own) */
+.fab .share-fab{display:none !important}
+
+/* ---- stronger hero contrast / readability ---- */
+.hero-bg::after{
+  background:linear-gradient(180deg, rgba(26,17,10,.34) 0%, rgba(26,17,10,.44) 46%, rgba(24,16,9,.82) 100%);
+}
+.hero h1{text-shadow:0 2px 30px rgba(20,12,6,.5)}
+.hero h1 em{color:#ECDCB0}
+.hero-sub{color:#fff;text-shadow:0 1px 18px rgba(20,12,6,.55)}
+
+/* ---- calligraphic accent ---- */
+.script-accent{
+  font-family:"Pinyon Script", cursive;
+  font-weight:400;font-style:normal;
+  color:var(--accent);line-height:.9;
+}
+
+/* ---- unified calligraphic eyebrow for every section ---- */
+.eyebrow.script-eyebrow{
+  font-family:"Pinyon Script", cursive !important;
+  font-weight:400;font-style:normal;
+  color:var(--accent);
+  font-size:clamp(30px,4.6vw,42px);
+  letter-spacing:0;text-transform:none;
+  line-height:1;display:block;margin-bottom:6px;
+}
+.eyebrow.script-eyebrow::before,
+.eyebrow.script-eyebrow::after{display:none}
+
+/* ---- ornamental divider ---- */
+.ornament{display:flex;align-items:center;gap:14px;margin-top:24px}
+.ornament span{height:1px;width:48px;display:block;background:linear-gradient(90deg,transparent,var(--accent))}
+.ornament span:last-child{background:linear-gradient(90deg,var(--accent),transparent)}
+.ornament i{width:7px;height:7px;background:var(--accent);transform:rotate(45deg);display:block;opacity:.85;flex-shrink:0}
+.ornament.center{justify-content:center}
+.sec-head .ornament{justify-content:flex-start}
+
+/* ---- MENU MODAL ---- */
+.menu-modal-overlay{
+  position:fixed;inset:0;z-index:200;
+  background:rgba(20,16,12,.72);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  opacity:0;visibility:hidden;
+  transition:opacity .4s var(--ease),visibility .4s;
+  display:flex;align-items:center;justify-content:center;
+  padding:clamp(16px,5vw,60px);
+}
+.menu-modal-overlay.open{opacity:1;visibility:visible}
+.menu-modal{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+  box-shadow:0 40px 100px -20px rgba(0,0,0,.28);
+  max-width:680px;width:100%;max-height:88vh;overflow-y:auto;
+  transform:translateY(24px) scale(.97);
+  transition:transform .45s var(--ease);
+  position:relative;
+}
+.menu-modal-overlay.open .menu-modal{transform:none}
+.menu-modal-head{
+  padding:clamp(26px,3vw,40px) clamp(26px,3vw,40px) clamp(20px,2.4vw,28px);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;background:var(--surface);z-index:2;
+  display:flex;align-items:flex-start;justify-content:space-between;gap:20px;
+}
+.menu-modal-head .mh-eyebrow{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600;
+}
+.menu-modal-head h3{
+  font-family:var(--font-display);font-size:clamp(24px,4vw,36px);
+  font-weight:600;color:var(--text);margin:7px 0 0;
+}
+.menu-modal-head p{color:var(--text-2);font-size:15px;margin:6px 0 0}
+.menu-modal-close{
+  width:40px;height:40px;border-radius:50%;border:1px solid var(--border-2);
+  background:transparent;color:var(--text);font-size:18px;cursor:pointer;
+  display:grid;place-items:center;flex-shrink:0;
+  transition:.25s var(--ease);
+}
+.menu-modal-close:hover{background:var(--bg-2);color:var(--accent);border-color:var(--accent);transform:rotate(90deg)}
+.menu-modal-body{padding:clamp(14px,2.2vw,28px) clamp(20px,2.6vw,36px) clamp(22px,2.6vw,34px);display:flex;flex-direction:column}
+.dish{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--border)}
+.dish:last-child{border-bottom:0}
+.dish-thumb{width:94px;height:94px;border-radius:14px;overflow:hidden;flex-shrink:0;position:relative;
+  background:var(--ph-grad);box-shadow:0 10px 26px -14px rgba(60,42,18,.45)}
+.dish-thumb::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.35);border-radius:14px;z-index:2;pointer-events:none}
+.dish-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.dish:hover .dish-thumb img{transform:scale(1.1)}
+.dish-info{flex:1;min-width:0}
+.dish-num{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.dish-name{font-family:var(--font-display);font-size:21px;font-weight:600;color:var(--text);line-height:1.2;margin:4px 0 6px}
+.dish-desc{font-size:14.5px;color:var(--text-2);line-height:1.6;margin:0}
+
+/* ---- FACILITATI ---- */
+.fac-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:clamp(18px,2.4vw,34px);
+  margin-top:clamp(40px,6vh,72px);
+}
+.fac-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+  overflow:hidden;box-shadow:var(--card-shadow);
+  transition:transform .5s var(--ease),border-color .4s,box-shadow .5s;
+}
+.fac-card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 30px 60px -30px rgba(80,60,20,.4)}
+.fac-photo{aspect-ratio:16/9;position:relative}
+.fac-photo::after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.55);
+  border-radius:6px;opacity:0;transform:scale(1.02);transition:.5s var(--ease);z-index:2;pointer-events:none}
+.fac-card:hover .fac-photo::after{opacity:1;transform:scale(1)}
+.fac-card:hover .fac-photo img{transform:scale(1.06)}
+.fac-body{padding:clamp(20px,2.4vw,30px)}
+.fac-body h3{font-size:clamp(20px,2.4vw,28px);margin:0 0 10px;color:var(--text)}
+.fac-body p{font-size:15.5px;color:var(--text-2);margin:0;line-height:1.6}
+.cap-badge{
+  display:inline-flex;align-items:center;gap:9px;
+  background:linear-gradient(120deg,var(--accent),var(--accent-2));
+  color:var(--on-accent);border-radius:999px;padding:9px 20px;
+  font-weight:700;font-size:14px;margin-top:20px;
+  box-shadow:0 8px 24px -10px color-mix(in srgb,var(--accent) 55%,transparent);
+}
+.cap-badge svg{width:17px;height:17px}
+
+.mcard{cursor:pointer}
+
+/* ---- STATS — editorial redesign (count-up) ---- */
+.stats{background:var(--bg-2);border-block:1px solid var(--border);
+  padding-block:clamp(56px,9vh,96px);position:relative;text-align:center}
+.stats-head{margin-bottom:clamp(32px,5vh,52px)}
+.stats-script{font-size:clamp(30px,4.6vw,44px);display:inline-block;line-height:1}
+.stats-sub{margin-top:8px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--text-3);font-weight:600}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;max-width:900px;margin:0 auto}
+.stat{text-align:center;position:relative;padding:0 8px}
+.stat:not(:last-child)::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);
+  width:1px;height:64px;background:linear-gradient(transparent,var(--border-2),transparent)}
+.stat-num{font-family:var(--font-display);font-size:clamp(40px,5vw,60px);color:var(--text);
+  line-height:1;font-weight:500;font-variant-numeric:tabular-nums;display:inline-block}
+.stat-num::after{content:"";display:block;width:26px;height:1px;background:var(--accent);
+  margin:15px auto 0;opacity:.9}
+.stat-label{margin-top:15px;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--text-3);font-weight:600}
+
+/* ---- CTA VISIT ---- */
+.cta-visit{position:relative;overflow:hidden;text-align:center;
+  padding-block:clamp(84px,15vh,168px);display:flex;align-items:center;justify-content:center}
+.cta-visit .cta-bg{position:absolute;inset:0;z-index:0}
+.cta-visit .cta-bg img{width:100%;height:100%;object-fit:cover;filter:var(--img-tint)}
+.cta-visit .cta-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(28,20,12,.58), rgba(28,20,12,.72))}
+.cta-visit .wrap{position:relative;z-index:2;max-width:760px}
+.cta-visit .cta-script{font-family:"Pinyon Script",cursive;color:#E9D9B0;
+  font-size:clamp(34px,6vw,60px);line-height:1;display:block;margin-bottom:8px}
+.cta-visit h2{color:#fff;font-size:clamp(30px,5vw,58px);margin:0 0 20px}
+.cta-visit p{color:rgba(255,255,255,.86);font-size:clamp(16px,1.5vw,19px);
+  max-width:54ch;margin:0 auto 34px;line-height:1.6}
+.cta-visit .ornament{justify-content:center;margin:0 auto 26px}
+.cta-visit .ornament span{background:linear-gradient(90deg,transparent,#E9D9B0)}
+.cta-visit .ornament span:last-child{background:linear-gradient(90deg,#E9D9B0,transparent)}
+.cta-visit .ornament i{background:#E9D9B0}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-visit .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+.cta-visit .btn-ghost:hover{color:#fff;border-color:#fff;background:rgba(255,255,255,.1)}
+
+/* despre sign script flourish */
+.despre-sign{position:relative}
+
+/* ---- programari card (no restaurant hours) ---- */
+.prog .prog-tag{display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:999px;
+  font-size:12.5px;font-weight:600;letter-spacing:.04em;margin-bottom:22px;
+  border:1px solid var(--border-2);color:var(--accent)}
+.prog .prog-tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.prog .prog-intro{color:var(--text-2);margin:0 0 24px;font-size:15.5px;line-height:1.6}
+.prog-list{list-style:none;padding:0;margin:0 0 28px;border-top:1px solid var(--border)}
+.prog-list li{position:relative;padding:15px 0 15px 28px;border-bottom:1px solid var(--border);
+  font-size:15.5px;color:var(--text)}
+.prog-list li::before{content:"";position:absolute;left:3px;top:21px;width:9px;height:9px;
+  background:var(--accent);transform:rotate(45deg)}
+.prog .btn{width:100%;justify-content:center}
+
+@media(max-width:700px){
+  .fac-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:repeat(2,1fr);gap:40px 20px}
+  .stat:nth-child(2)::after{display:none}
+  .stat-num{font-size:clamp(36px,10vw,50px)}
+  /* readable Atmosfera text over photo on phones */
+  .atmo-bg::after{
+    background:linear-gradient(180deg,
+      color-mix(in srgb,var(--bg) 30%, transparent) 0%,
+      color-mix(in srgb,var(--bg) 80%, transparent) 55%,
+      color-mix(in srgb,var(--bg) 95%, transparent) 100%);
+  }
+}
+/* clean up nav + typographic scale on phones */
+@media(max-width:920px){
+  .nav .nav-cta .btn-primary{display:none}
+  .brand-txt b{font-size:18px}
+  .brand-txt span{letter-spacing:.2em;font-size:9px}
+  /* compact navbar height on mobile */
+  :root{--nav-h:58px}
+  .nav.scrolled{height:54px !important}
+  /* smaller, cleaner hamburger */
+  .hamb{width:34px !important;height:34px !important;border-radius:9px !important;border-color:var(--border) !important}
+  .hamb i{width:15px !important}
+}
+@media(max-width:560px){
+  /* menu cards less tall on single-column */
+  .mcard .ph{aspect-ratio:5/4 !important}
+}
+/* ---- backdrop pentru drawer ---- */
+.mnav-backdrop{
+  position:fixed;inset:0;z-index:299;
+  background:rgba(20,14,8,.48);
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+  opacity:0;visibility:hidden;
+  transition:opacity .4s,visibility .4s;
+}
+.mnav-backdrop.open{opacity:1;visibility:visible}
+
+/* ---- Mobile nav — right panel drawer ---- */
+@media(max-width:920px){
+  .mnav{
+    position:fixed !important;top:0 !important;right:0 !important;
+    bottom:0 !important;left:auto !important;
+    width:min(300px,82vw) !important;
+    background:var(--surface) !important;
+    border-left:1px solid var(--border) !important;
+    box-shadow:-24px 0 80px rgba(20,14,8,.2) !important;
+    z-index:300 !important;
+    display:flex !important;flex-direction:column !important;
+    padding:80px 32px 36px !important;
+    gap:0 !important;
+    transform:translateX(110%) !important;
+    opacity:1 !important;visibility:visible !important;
+    transition:transform .45s cubic-bezier(.25,.46,.45,.94) !important;
+    overflow-y:auto !important;
+  }
+  .mnav.open{transform:translateX(0) !important}
+  .mnav a{
+    font-family:var(--font-display) !important;
+    font-size:clamp(20px,5vw,24px) !important;
+    font-weight:500 !important;
+    color:var(--text) !important;
+    padding:15px 0 !important;
+    border-bottom:1px solid var(--border) !important;
+    border-radius:0 !important;
+    display:flex !important;align-items:baseline !important;
+    justify-content:flex-start !important;
+    transition:color .25s !important;
+    text-decoration:none !important;
+  }
+  .mnav a::after{
+    content:"→";font-size:15px;color:var(--accent);margin-left:auto;
+    align-self:center;
+    opacity:0;transition:opacity .25s,transform .25s;transform:translateX(-8px);
+  }
+  .mnav a:hover{color:var(--accent) !important}
+  .mnav a:hover::after{opacity:1;transform:translateX(0)}
+  .mnav .m-foot{
+    margin-top:auto !important;padding-top:28px !important;
+    display:flex !important;flex-direction:column !important;
+    gap:10px !important;align-items:center !important;
+  }
+  .mnav .m-foot .btn{
+    width:auto !important;justify-content:center !important;
+    text-align:center !important;border-radius:999px !important;
+    padding:10px 32px !important;font-size:14px !important;
+  }
+  .mnav-brand{
+    position:absolute !important;top:24px !important;left:32px !important;
+  }
+  .mnav-brand b{
+    font-family:var(--font-display) !important;font-size:17px !important;
+    color:var(--text) !important;display:block !important;font-weight:600 !important;
+  }
+  .mnav-brand span{
+    font-size:9px !important;letter-spacing:.22em !important;
+    text-transform:uppercase !important;color:var(--text-3) !important;
+  }
+  .mnav-num{
+    font-size:11px !important;color:var(--accent) !important;
+    letter-spacing:.12em !important;font-weight:600 !important;
+    margin-right:12px !important;font-family:var(--font-sans, sans-serif) !important;
+    flex-shrink:0 !important;
+  }
+  .mnav-tagline{
+    display:flex !important;align-items:center !important;
+    justify-content:center !important;gap:12px !important;
+    font-family:"Pinyon Script", cursive !important;
+    font-size:24px !important;color:var(--accent) !important;
+    margin-bottom:14px !important;line-height:1 !important;
+  }
+  .mnav-tagline::before,.mnav-tagline::after{
+    content:"" !important;height:1px !important;width:28px !important;
+    background:var(--border-2) !important;display:block !important;
+  }
+}
+@media(max-width:560px){
+  /* highlights band: drop messy dots, wrap cleanly */
+  .band .wrap{justify-content:flex-start;gap:9px 16px}
+  .band .dot{display:none}
+  /* dial back oversized headings on mobile */
+  .sec-head h2{font-size:clamp(27px,7.6vw,38px)}
+  .despre-body h2{font-size:clamp(26px,7.4vw,36px)}
+  .atmo-card h2{font-size:clamp(27px,7.6vw,38px)}
+  .cta-visit h2{font-size:clamp(25px,7vw,38px)}
+  .cta-visit .cta-script{font-size:clamp(30px,9vw,44px)}
+  .hero-sub{font-size:15.5px;line-height:1.5}
+  .lead{font-size:15.5px}
+  .rev p{font-size:18px}
+  /* atmosfera tags — fit better on phones */
+  .atmo-tags{gap:8px;margin-top:24px}
+  .atmo-tags span{padding:7px 13px;font-size:12.5px;letter-spacing:.02em}
+}
+@media(max-width:480px){
+  /* tighter dish rows so descriptions breathe */
+  .dish{gap:14px}
+  .dish-thumb{width:72px;height:72px;border-radius:11px}
+  .dish-name{font-size:18px}
+  .dish-desc{font-size:13.5px}
+  /* safety net for the big hero title */
+  .hero h1{font-size:clamp(32px,8.4vw,40px)}
+  /* button pairs — compact side by side on small screens */
+  .hero-cta,.cta-actions,.loc-actions{gap:10px;flex-wrap:nowrap}
+  .hero-cta .btn,.cta-actions .btn,.loc-actions .btn{padding:12px 16px;font-size:13.5px;white-space:nowrap}
+  /* ghost button in hero needs visible border on dark bg */
+  .hero-cta .btn-ghost{border-color:rgba(255,255,255,.7);color:#fff}
+  /* extra bottom room so scroll cue doesn't overlap buttons */
+  .hero{padding-bottom:80px}
+  /* center button groups on mobile */
+  .hero-cta{justify-content:center}
+  .cap-badge{margin-left:auto;margin-right:auto}
+  .loc-actions{justify-content:center}
+  .cta-actions{justify-content:center}
+}
+
+/* ---- Recenzii carousel ---- */
+.rev-carousel{position:relative;max-width:780px;margin:clamp(40px,5vw,64px) auto 0;overflow:hidden}
+.rev-track{display:grid;}
+.rev-slide{
+  grid-area:1/1;text-align:center;
+  background:var(--surface);border:1px solid var(--border);border-radius:calc(var(--r) + 6px);
+  padding:clamp(36px,5vw,60px) clamp(24px,5vw,64px);
+  box-shadow:0 20px 60px -30px rgba(100,80,40,.12);
+  position:relative;overflow:hidden;
+  opacity:0;transform:scale(.96);pointer-events:none;
+  transition:opacity .7s ease,transform .7s ease;
+}
+.rev-slide.active{opacity:1;transform:scale(1);pointer-events:auto;}
+.rev-slide::after{
+  content:'"';position:absolute;bottom:-24px;right:16px;
+  font-family:var(--font-display);font-size:180px;color:var(--accent);opacity:.05;
+  line-height:1;pointer-events:none;user-select:none;
+}
+.rev-q{
+  display:block;font-family:var(--font-display);
+  font-size:clamp(64px,10vw,96px);color:var(--accent);opacity:.2;
+  line-height:.65;margin-bottom:18px;user-select:none;pointer-events:none;
+}
+.rev-slide .stars{color:var(--accent);font-size:15px;letter-spacing:3px;margin-bottom:20px}
+.rev-slide p{
+  font-family:var(--font-display);font-style:italic;
+  font-size:clamp(17px,1.9vw,21px);line-height:1.72;
+  color:var(--text);max-width:54ch;margin:0 auto 28px;
+}
+.rev-slide .who{justify-content:center}
+.rev-slide .av{
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:var(--on-accent);font-size:12px;font-weight:700;
+}
+.rev-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:24px}
+.rev-arrow{
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--border-2);
+  background:transparent;color:var(--text);font-size:24px;cursor:pointer;line-height:1;
+  display:grid;place-items:center;transition:.25s var(--ease);flex-shrink:0;
+}
+.rev-arrow:hover{border-color:var(--accent);color:var(--accent)}
+.rev-dots{display:flex;gap:8px;align-items:center}
+.rev-dot{
+  width:8px;height:8px;border-radius:99px;border:none;padding:0;
+  background:var(--border-2);cursor:pointer;transition:.35s var(--ease);
+}
+.rev-dot.active{background:var(--accent);width:22px}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#acasa" aria-label="Casa Cornelius — acasă">
+      <span class="brand-txt"><b>Casa Cornelius</b><span>Sală de Nunți · Rădăuți</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Navigație principală">
+      <a href="#despre" data-spy="despre">Despre</a>
+      <a href="#meniu" data-spy="meniu">Meniuri</a>
+      <a href="#facilitati" data-spy="facilitati">Facilități</a>
+      <a href="#galerie" data-spy="galerie">Galerie</a>
+      <a href="#recenzii" data-spy="recenzii">Recenzii</a>
+      <a href="#contact" data-spy="contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+40230123456">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2.1Z"/></svg>
+        0230 123 456
+      </a>
+      <a class="btn btn-primary" href="#contact">Rezervare <span class="arr">→</span></a>
+      <button class="hamb" id="hamb" aria-label="Meniu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mnav-backdrop" id="mnavBackdrop"></div>
+<nav class="mnav" id="mnav" aria-label="Meniu mobil">
+  <div class="mnav-brand">
+    <b>Casa Cornelius</b>
+    <span>Sală de Nunți · Rădăuți</span>
+  </div>
+  <a href="#despre"><span class="mnav-num">01</span>Despre</a>
+  <a href="#meniu"><span class="mnav-num">02</span>Meniuri</a>
+  <a href="#facilitati"><span class="mnav-num">03</span>Facilități</a>
+  <a href="#galerie"><span class="mnav-num">04</span>Galerie</a>
+  <a href="#recenzii"><span class="mnav-num">05</span>Recenzii</a>
+  <a href="#contact"><span class="mnav-num">06</span>Contact</a>
+  <div class="m-foot">
+    <span class="mnav-tagline">Vă răspundem cu drag</span>
+    <a class="btn btn-primary" href="tel:+40230123456">Sună-ne</a>
+    <a class="btn btn-ghost" href="#contact">Rezervare</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="acasa" data-screen-label="Hero">
+  <div class="hero-bg ph" data-label="sala de nunta">
+    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1920&q=72&auto=format&fit=crop" alt="Sala de nunți Casa Cornelius Rădăuți">
+  </div>
+  <div class="wrap">
+    <span class="hero-rating reveal">
+      <span class="stars">★★★★★</span> 5,0 pe Google · Rădăuți
+    </span>
+    <h1 class="reveal" style="--i:1">Nunta de vis,<br>în inima <em>Rădăuțiului</em>.</h1>
+    <p class="hero-sub reveal" style="--i:2">Casa Cornelius vă oferă cadrul perfect pentru cel mai important moment din viața voastră — un salon elegant, curte verde și atmosferă de neuitat pentru până la 300 de invitați.</p>
+    <div class="hero-cta reveal" style="--i:3">
+      <a class="btn btn-primary" href="#meniu">Descoperă meniurile <span class="arr">→</span></a>
+      <a class="btn btn-ghost" href="#despre">Povestea noastră</a>
+    </div>
+  </div>
+  <div class="hero-cue"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+
+<!-- ============ DESPRE ============ -->
+<section class="sec" id="despre" data-screen-label="Despre noi">
+  <div class="wrap">
+    <div class="despre-grid">
+      <div class="despre-media reveal">
+        <div class="ph ph-a" data-label="cuplu miri">
+          <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=900&q=72&auto=format&fit=crop" alt="Cuplu de miri la Casa Cornelius">
+        </div>
+        <div class="ph ph-b" data-label="buchet mireasa">
+          <img src="https://images.unsplash.com/photo-1550005809-91ad75fb315f?w=600&q=72&auto=format&fit=crop" alt="Buchet de mireasă">
+        </div>
+        <div class="badge">
+          <b>2010</b><span>Anul fondării</span>
+        </div>
+      </div>
+      <div class="despre-body">
+        <span class="eyebrow script-eyebrow reveal">Despre noi</span>
+        <h2 class="reveal" style="--i:1">Un loc special pentru cel mai special moment.</h2>
+        <div class="ornament reveal" style="--i:1" aria-hidden="true"><span></span><i></i><span></span></div>
+        <p class="reveal" style="--i:2">Casa Cornelius este destinația perfectă pentru nunțile cu adevărat memorabile din zona Rădăuților. Cu o tradiție îndelungată în organizarea evenimentelor festive, vă punem la dispoziție un spațiu rafinat, gastronomie desăvârșită și un serviciu impecabil.</p>
+        <p class="reveal" style="--i:3">Fie că visați la o nuntă intimă sau la o festivitate grandioasă, echipa noastră dedicată va transforma fiecare detaliu al zilei voastre speciale într-o amintire de neuitat. Salonul nostru generos, curtea verde și foișorul pentru ceremonii religioase creează cadrul perfect pentru o zi perfectă.</p>
+        <div class="despre-sign reveal" style="--i:4">„Ziua voastră, povestea voastră, perfecțiunea noastră."<span>Echipa Casa Cornelius</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS (count-up) ============ -->
+<section class="stats" data-screen-label="Casa Cornelius în cifre" aria-label="Casa Cornelius în cifre">
+  <div class="wrap">
+    <div class="stats-head reveal">
+      <span class="script-accent stats-script">În câteva cuvinte</span>
+      <div class="stats-sub">Casa Cornelius</div>
+    </div>
+    <div class="stats-row" id="statsWrap">
+      <div class="stat reveal" style="--i:0">
+        <div class="stat-num" data-count="15" data-suffix="+">0</div>
+        <div class="stat-label">Ani de experiență</div>
+      </div>
+      <div class="stat reveal" style="--i:1">
+        <div class="stat-num" data-count="500" data-suffix="+">0</div>
+        <div class="stat-label">Nunți organizate</div>
+      </div>
+      <div class="stat reveal" style="--i:2">
+        <div class="stat-num" data-count="300">0</div>
+        <div class="stat-label">Invitați capacitate</div>
+      </div>
+      <div class="stat reveal" style="--i:3">
+        <div class="stat-num" data-count="5" data-decimals="1" data-suffix="★">0</div>
+        <div class="stat-label">Rating Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENIU ============ -->
+<section class="sec sec--alt" id="meniu" data-screen-label="Meniuri">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow script-eyebrow reveal">Gastronomie</span>
+      <h2 class="reveal" style="--i:1">Meniurile noastre</h2>
+      <p class="lead reveal" style="--i:2">Patru propuneri culinare, fiecare cu personalitate proprie. Apasă pe oricare meniu pentru a descoperi felurile de mâncare incluse, cu imagini.</p>
+      <div class="ornament reveal" style="--i:2" aria-hidden="true"><span></span><i></i><span></span></div>
+    </div>
+    <div class="menu-grid">
+      <article class="mcard reveal" style="--i:0" data-menu="traditional" role="button" tabindex="0" aria-label="Deschide Meniu Tradițional">
+        <div class="ph" data-label="meniu traditional"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=72&auto=format&fit=crop" alt="Meniu Tradițional"></div>
+        <div class="mc-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+        <div class="mc-body"><span class="mc-num">01</span><h3>Meniu Tradițional</h3><p>Savori autentice românești, preparate după rețete transmise din generație în generație.</p></div>
+      </article>
+      <article class="mcard reveal" style="--i:1" data-menu="clasic" role="button" tabindex="0" aria-label="Deschide Meniu Clasic">
+        <div class="ph" data-label="meniu clasic"><img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=700&q=72&auto=format&fit=crop" alt="Meniu Clasic"></div>
+        <div class="mc-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+        <div class="mc-body"><span class="mc-num">02</span><h3>Meniu Clasic</h3><p>Preparate rafinate, echilibrate și pline de eleganță — alegerea perfectă pentru orice celebrare.</p></div>
+      </article>
+      <article class="mcard reveal" style="--i:2" data-menu="highclass" role="button" tabindex="0" aria-label="Deschide Meniu High Class">
+        <div class="ph" data-label="meniu high class"><img src="https://images.unsplash.com/photo-1486428263684-28ec9e4f2584?w=700&q=72&auto=format&fit=crop" alt="Meniu High Class"></div>
+        <div class="mc-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+        <div class="mc-body"><span class="mc-num">03</span><h3>Meniu High Class</h3><p>Gastronomie de înaltă clasă cu ingrediente premium, pentru o experiență culinară de excepție.</p></div>
+      </article>
+      <article class="mcard reveal" style="--i:3" data-menu="modern" role="button" tabindex="0" aria-label="Deschide Meniu Modern">
+        <div class="ph" data-label="meniu modern"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=700&q=72&auto=format&fit=crop" alt="Meniu Modern"></div>
+        <div class="mc-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+        <div class="mc-body"><span class="mc-num">04</span><h3>Meniu Modern</h3><p>Tendințe culinare contemporane cu influențe internaționale, pentru un gust al viitorului.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MENU MODAL -->
+<div class="menu-modal-overlay" id="menuOverlay" aria-hidden="true">
+  <div class="menu-modal" id="menuModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="menu-modal-head">
+      <div>
+        <span class="mh-eyebrow">Casa Cornelius · Meniu</span>
+        <h3 id="modalTitle">Meniu</h3>
+        <p id="modalSubtitle"></p>
+      </div>
+      <button class="menu-modal-close" id="menuClose" aria-label="Închide">✕</button>
+    </div>
+    <div class="menu-modal-body" id="modalDishes"></div>
+  </div>
+</div>
+
+<!-- ============ FACILITATI ============ -->
+<section class="sec" id="facilitati" data-screen-label="Facilități">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow script-eyebrow reveal">Ce oferim</span>
+      <h2 class="reveal" style="--i:1">Spații pentru fiecare moment</h2>
+      <p class="lead reveal" style="--i:2">Casa Cornelius pune la dispoziție cadre diverse pentru ca nunta voastră să fie completă — de la primul dans până la cununia religioasă.</p>
+      <div class="ornament reveal" style="--i:2" aria-hidden="true"><span></span><i></i><span></span></div>
+    </div>
+    <div class="fac-grid">
+      <div class="fac-card reveal" style="--i:0">
+        <div class="ph fac-photo" data-label="salon nunta">
+          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=900&q=72&auto=format&fit=crop" alt="Salon de nunți generos Casa Cornelius">
+        </div>
+        <div class="fac-body">
+          <h3>Salon Generos</h3>
+          <p>Un salon elegant și spațios, decorat cu rafinament și dotat cu tot confortul necesar. Scenă pentru muzică live, pistă de dans și posibilitate de aranjamente florale personalizate.</p>
+          <div class="cap-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="8" r="3.4"/><path d="M21 21v-2a4 4 0 0 0-3-3.8"/></svg>
+            Până la 300 de invitați
+          </div>
+        </div>
+      </div>
+      <div class="fac-card reveal" style="--i:1">
+        <div class="ph fac-photo" data-label="curte verde">
+          <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=900&q=72&auto=format&fit=crop" alt="Curtea verde Casa Cornelius">
+        </div>
+        <div class="fac-body">
+          <h3>Curte Verde</h3>
+          <p>O grădină luxuriantă și bine întreținută, perfectă pentru fotografii de nuntă, cocktail în aer liber sau momente de relaxare între dansuri. Verdele naturii creează un fundal de poveste pentru amintirile voastre.</p>
+        </div>
+      </div>
+      <div class="fac-card reveal" style="--i:2">
+        <div class="ph fac-photo" data-label="terasa">
+          <img src="https://images.unsplash.com/photo-1510076857177-7470076d4098?w=900&q=72&auto=format&fit=crop" alt="Terasa elegantă Casa Cornelius">
+        </div>
+        <div class="fac-body">
+          <h3>Terasă Elegantă</h3>
+          <p>Terasa amenajată cu gust este ideală pentru aperitivele de nuntă sau pentru un after-party sub stele. Spațiu versatil ce poate fi personalizat cu decoruri florale, lumânări și iluminat ambiant.</p>
+        </div>
+      </div>
+      <div class="fac-card reveal" style="--i:3">
+        <div class="ph fac-photo" data-label="foisor ceremonii religioase">
+          <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=900&q=72&auto=format&fit=crop" alt="Foișor pentru ceremonii religioase">
+        </div>
+        <div class="fac-body">
+          <h3>Foișor pentru Ceremonii Religioase</h3>
+          <p>Un foișor special amenajat, cadru intim și solemn, destinat cununiei religioase. Ornamentat cu flori albe și detalii rafinate, oferă un decor de vis pentru momentul cel mai sfânt al nunții voastre.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIE ============ -->
+<section class="sec sec--alt" id="galerie" data-screen-label="Galerie">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow script-eyebrow reveal">Momente</span>
+      <h2 class="reveal" style="--i:1">Momente de neuitat</h2>
+      <p class="lead reveal" style="--i:2">O privire asupra spațiilor și atmosferei din Casa Cornelius. Atinge orice imagine pentru a o vedea mai mare.</p>
+      <div class="ornament reveal" style="--i:2" aria-hidden="true"><span></span><i></i><span></span></div>
+    </div>
+    <div class="gal" id="gal">
+      <div class="ph g1 reveal" data-label="cuplu miri" style="--i:0"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=1100&q=72&auto=format&fit=crop" alt=""><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2M11 8v6M8 11h6"/></svg></span></div>
+      <div class="ph g2 reveal" data-label="ceremonie" style="--i:1"><img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=700&q=72&auto=format&fit=crop" alt=""><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2M11 8v6M8 11h6"/></svg></span></div>
+      <div class="ph g3 reveal" data-label="tort nunta" style="--i:2"><img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=700&q=72&auto=format&fit=crop" alt=""><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2M11 8v6M8 11h6"/></svg></span></div>
+      <div class="ph g4 reveal" data-label="masa eleganta" style="--i:3"><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=700&q=72&auto=format&fit=crop" alt=""><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2M11 8v6M8 11h6"/></svg></span></div>
+      <div class="ph g5 reveal" data-label="receptie" style="--i:4"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1100&q=72&auto=format&fit=crop" alt=""><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2M11 8v6M8 11h6"/></svg></span></div>
+      <div class="ph g6 reveal" data-label="aranjament masa" style="--i:5"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=700&q=72&auto=format&fit=crop" alt=""><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2M11 8v6M8 11h6"/></svg></span></div>
+      <div class="ph g7 reveal" data-label="buchet mireasa" style="--i:6"><img src="https://images.unsplash.com/photo-1550005809-91ad75fb315f?w=700&q=72&auto=format&fit=crop" alt=""><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2M11 8v6M8 11h6"/></svg></span></div>
+      <div class="ph g8 reveal" data-label="receptie seara" style="--i:7"><img src="https://images.unsplash.com/photo-1561655885-d1d1c8f9f4c4?w=700&q=72&auto=format&fit=crop" alt=""><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2M11 8v6M8 11h6"/></svg></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ATMOSFERA ============ -->
+<section class="atmo" id="atmosfera" data-screen-label="Atmosferă">
+  <div class="atmo-bg ph" data-label="atmosfera sala nunti">
+    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1600&q=72&auto=format&fit=crop" alt="Atmosfera elegantă a sălii de nunți Casa Cornelius">
+  </div>
+  <div class="wrap">
+    <div class="atmo-card">
+      <span class="eyebrow script-eyebrow reveal">Atmosfera</span>
+      <h2 class="reveal" style="--i:1">Un cadru de poveste pentru ziua ta specială.</h2>
+      <p class="lead reveal" style="--i:2">Lumini calde, decoruri florale și un ambient rafinat care va face din nunta voastră un eveniment de neuitat. Echipa Casa Cornelius se ocupă de fiecare detaliu, pentru ca voi să vă bucurați de fiecare clipă.</p>
+      <div class="atmo-tags reveal" style="--i:3">
+        <span>Elegant</span><span>Rafinat</span><span>Personalizat</span><span>Memorabil</span><span>Exclusivist</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECENZII ============ -->
+<section class="sec" id="recenzii" data-screen-label="Recenzii">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow script-eyebrow reveal">Poveștile lor</span>
+      <h2 class="reveal" style="--i:1">5,0 stele pe Google</h2>
+      <p class="lead reveal" style="--i:2">Cuvintele celor care și-au trăit povestea de dragoste la Casa Cornelius.</p>
+      <div class="ornament reveal" style="--i:2" aria-hidden="true"><span></span><i></i><span></span></div>
+    </div>
+    <div class="rev-carousel reveal" style="--i:3">
+      <div class="rev-track" id="revTrack">
+        <div class="rev-slide active">
+          <span class="rev-q" aria-hidden="true">❝</span>
+          <div class="stars">★★★★★</div>
+          <p>Am ales Casa Cornelius pentru nunta noastră și a fost cea mai bună decizie. Salonul era superb, mâncarea delicioasă și personalul extraordinar de amabil. Toți invitații noștri au rămas impresionați!</p>
+          <div class="who"><span class="av">AM</span><div><b>Ana &amp; Mihai</b><span>Miri · Rădăuți</span></div></div>
+        </div>
+        <div class="rev-slide">
+          <span class="rev-q" aria-hidden="true">❝</span>
+          <div class="stars">★★★★★</div>
+          <p>Curtea verde și foișorul pentru cununie au creat un cadru de vis. Totul a fost perfect organizat, de la meniu până la decoruri. Nu ne imaginam că ziua noastră va fi atât de frumoasă.</p>
+          <div class="who"><span class="av">RL</span><div><b>Raluca &amp; Liviu</b><span>Miri · Suceava</span></div></div>
+        </div>
+        <div class="rev-slide">
+          <span class="rev-q" aria-hidden="true">❝</span>
+          <div class="stars">★★★★★</div>
+          <p>Am organizat nunta cu aproape 280 de invitați și echipa Casa Cornelius a gestionat totul impecabil. Meniurile au fost excelente, terasa superbă. Recomandăm cu toată căldura!</p>
+          <div class="who"><span class="av">IC</span><div><b>Ioana &amp; Cristian</b><span>Miri · Rădăuți</span></div></div>
+        </div>
+      </div>
+      <div class="rev-nav">
+        <button class="rev-arrow" id="revPrev" aria-label="Recenzie anterioară">‹</button>
+        <div class="rev-dots">
+          <button class="rev-dot active" aria-label="Recenzie 1"></button>
+          <button class="rev-dot" aria-label="Recenzie 2"></button>
+          <button class="rev-dot" aria-label="Recenzie 3"></button>
+        </div>
+        <button class="rev-arrow" id="revNext" aria-label="Recenzie următoare">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA VISIT ============ -->
+<section class="cta-visit" data-screen-label="Programează o vizită">
+  <div class="cta-bg ph" data-label="sala nunta seara">
+    <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=1920&q=72&auto=format&fit=crop" alt="">
+  </div>
+  <div class="wrap">
+    <span class="cta-script reveal">Vă așteptăm</span>
+    <div class="ornament reveal" style="--i:1" aria-hidden="true"><span></span><i></i><span></span></div>
+    <h2 class="reveal" style="--i:1">Programați o vizită la Casa Cornelius</h2>
+    <p class="reveal" style="--i:2">Veniți să descoperiți salonul, curtea verde și foișorul nostru. Vă ajutăm cu plăcere să planificați fiecare detaliu al zilei voastre speciale.</p>
+    <div class="cta-actions reveal" style="--i:3">
+      <a class="btn btn-primary" href="tel:+40230123456">Sună acum <span class="arr">→</span></a>
+      <a class="btn btn-ghost" href="#contact">Vezi detalii contact</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec sec--alt" id="contact" data-screen-label="Contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow script-eyebrow reveal">Să ne cunoaștem</span>
+      <h2 class="reveal" style="--i:1">Rezervați ziua voastră specială</h2>
+      <p class="lead reveal" style="--i:2">Suntem la dispoziția voastră pentru detalii, vizite și rezervări. Veniți să ne cunoaștem!</p>
+      <div class="ornament reveal" style="--i:2" aria-hidden="true"><span></span><i></i><span></span></div>
+    </div>
+    <div class="contact-grid">
+      <div class="card prog reveal">
+        <span class="prog-tag">Pe bază de programare</span>
+        <h3>Programări &amp; Vizionări</h3>
+        <p class="prog-intro">Casa Cornelius vă primește pe bază de programare. Stabilim împreună o întâlnire pentru a vizita spațiile și a discuta toate detaliile evenimentului vostru.</p>
+        <ul class="prog-list">
+          <li>Vizionarea salonului, curții și foișorului</li>
+          <li>Discuție despre meniu și aranjamente</li>
+          <li>Ofertă personalizată pentru ziua voastră</li>
+        </ul>
+        <a class="btn btn-primary" href="tel:+40230123456">Sună pentru programare <span class="arr">→</span></a>
+      </div>
+
+      <div class="card loc reveal" style="--i:1">
+        <div class="loc-map" id="locMap">
+          <div class="map-fallback">
+            <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+            <b>Rădăuți</b>
+            <span>Județul Suceava</span>
+          </div>
+          <iframe title="Hartă Casa Cornelius" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            onload="this.closest('.loc-map').classList.add('maploaded')"
+            src="https://www.google.com/maps?q=Radauti+Suceava+Romania&output=embed"></iframe>
+          <a class="map-open" href="https://www.google.com/maps/search/?api=1&query=Casa+Cornelius+Radauti+Suceava" target="_blank" rel="noopener">Deschide harta
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+        <div class="loc-info">
+          <div class="loc-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            <div><b>Adresă</b><a href="https://www.google.com/maps/search/?api=1&query=Casa+Cornelius+Radauti" target="_blank" rel="noopener">Rădăuți, Județul Suceava</a></div>
+          </div>
+          <div class="loc-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2.1Z"/></svg>
+            <div><b>Telefon</b><a href="tel:+40230123456">0230 123 456</a></div>
+          </div>
+          <div class="loc-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            <div><b>Email</b><a href="mailto:contact@casacornelius.ro">contact@casacornelius.ro</a></div>
+          </div>
+          <div class="loc-actions">
+            <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Radauti+Suceava+Romania" target="_blank" rel="noopener">Navighează <span class="arr">→</span></a>
+            <button class="btn btn-ghost" data-share>Distribuie</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot" id="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="#acasa">
+          <span class="brand-txt"><b>Casa Cornelius</b><span>Sală de Nunți · Rădăuți</span></span>
+        </a>
+        <p>Sala de nunți de vis din Rădăuți — salon generos, curte verde, terasă și foișor pentru ceremonii, pentru până la 300 de invitați.</p>
+        <div class="socials">
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9V7c0-1 .3-1.5 1.6-1.5H17V2.2C16.6 2.1 15.5 2 14.3 2 11.7 2 10 3.6 10 6.5V9H7.5v3.2H10V22h3.4v-9.8h2.5l.4-3.2H13.4Z"/></svg></a>
+          <a href="mailto:contact@casacornelius.ro" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Navigare</h4>
+        <a href="#despre">Despre noi</a>
+        <a href="#meniu">Meniuri</a>
+        <a href="#facilitati">Facilități</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#recenzii">Recenzii</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="https://www.google.com/maps/search/?api=1&query=Casa+Cornelius+Radauti" target="_blank" rel="noopener">Rădăuți, Suceava</a>
+        <a href="tel:+40230123456">0230 123 456</a>
+        <a href="mailto:contact@casacornelius.ro">contact@casacornelius.ro</a>
+        <p>Vizite pe bază de programare</p>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Casa Cornelius. Toate drepturile rezervate.</span>
+      <span>Făcut cu drag în Rădăuți</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lb" id="lb" aria-hidden="true">
+  <button class="lb-close" aria-label="Închide">✕</button>
+  <button class="lb-nav lb-prev" aria-label="Anterioara">‹</button>
+  <img id="lb-img" alt="">
+  <button class="lb-nav lb-next" aria-label="Următoarea">›</button>
+  <div class="lb-count"><span id="lb-cur">1</span> / <span id="lb-total">8</span></div>
+</div>
+
+<!-- ============ FLOATING ============ -->
+<div class="fab" id="fab">
+  <button class="share-fab" data-share aria-label="Distribuie">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+  </button>
+  <a class="call-fab" href="tel:+40230123456" aria-label="Sună acum">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2.1Z"/></svg>
+  </a>
+  <button class="top-fab" id="topBtn" aria-label="Sus">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 14 6-6 6 6"/></svg>
+  </button>
+</div>
+
+<script src="assets/site.js"></script>
+
+<script>
+/* ---- Menu modal data & logic (with dish images) ---- */
+const menuData = {
+  traditional: {
+    title: "Meniu Tradițional",
+    subtitle: "Savori autentice din bucătăria românească",
+    dishes: [
+      { name: "Ciorbă de burtă", img: "https://images.unsplash.com/photo-1547592180-85f173990554?w=240&q=70&auto=format&fit=crop", desc: "Supă tradițională românească preparată cu burtă de vită, smântână proaspătă și usturoi zdrobit — un deliciu care deschide cu brio orice masă festivă." },
+      { name: "Salată de boeuf", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=240&q=70&auto=format&fit=crop", desc: "Preparat clasic cu carne de vită fiartă, legume fierte și maioneză de casă, nelipsit de pe nicio masă de sărbătoare românească." },
+      { name: "Sarmale cu smântână și mămăligă", img: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=240&q=70&auto=format&fit=crop", desc: "Rulouri fragede de varză umplute cu carne de porc, orez și mirodenii aromate, servite cu smântână proaspătă și mămăligă aurie." },
+      { name: "Friptură de miel la cuptor", img: "https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=240&q=70&auto=format&fit=crop", desc: "Miel fraged crescut local, marinat în ierburi aromate și usturoi, copt lent la cuptor până la o textură suculentă și fragedă." },
+      { name: "Cozonac cu nucă și rahat", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=240&q=70&auto=format&fit=crop", desc: "Desert tradițional pufos, cu umplutură generoasă de nucă, rahat colorat și cacao, copt în stil artizanal după rețete vechi de familie." }
+    ]
+  },
+  clasic: {
+    title: "Meniu Clasic",
+    subtitle: "Rafinament și echilibru gastronomic",
+    dishes: [
+      { name: "Consommé de pui cu tăiței de casă", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=240&q=70&auto=format&fit=crop", desc: "Supă limpede, aromată și aurie din pui de curte, servită cu tăiței subțiri preparați manual în bucătăria proprie." },
+      { name: "Plăcintă cu brânză și mărar", img: "https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=240&q=70&auto=format&fit=crop", desc: "Foitaj auriu și crocant cu umplutură cremoasă de brânză dulce și mărar proaspăt — o gustare clasică nelipsită." },
+      { name: "Mușchi de vită gratinat", img: "https://images.unsplash.com/photo-1546964124-0cce460f38ef?w=240&q=70&auto=format&fit=crop", desc: "Medalion din mușchi de vită gratinate cu unt clarificat și ierburi fine, servit cu legume sezoniere și sos de roșii." },
+      { name: "Pui la grătar cu garnitură asortată", img: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=240&q=70&auto=format&fit=crop", desc: "Piept de pui suculent, gătit pe grătar cu marinadă de lămâie și rozmarin, însoțit de legume la abur și piure cremos." },
+      { name: "Tartă cu fructe de sezon", img: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=240&q=70&auto=format&fit=crop", desc: "Cremă fină de vanilie în coajă de tartă crocantă și aurie, decorată cu un mozaic viu de fructe proaspete de sezon." }
+    ]
+  },
+  highclass: {
+    title: "Meniu High Class",
+    subtitle: "Gastronomie de înaltă clasă cu ingrediente premium",
+    dishes: [
+      { name: "Terrine de foie gras cu brioche", img: "https://images.unsplash.com/photo-1432139509613-5c4255815697?w=240&q=70&auto=format&fit=crop", desc: "Foie gras de rață maturată, pregătit în terrine și servit cu brioche prăjit în unt, confit de smochine și cristale de fleur de sel." },
+      { name: "File de somon cu sos beurre blanc", img: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=240&q=70&auto=format&fit=crop", desc: "Somon atlantic proaspăt copt delicat în unt cu ierburi fine, servit cu sos beurre blanc cu lămâie și capere de Sicilia." },
+      { name: "Mușchi de vită Wellington", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=240&q=70&auto=format&fit=crop", desc: "File impecabil de vită înfășurat în duxelles de ciuperci porcini, jambon Parma și foietaj crocant — o adevărată operă culinară." },
+      { name: "Degustare de brânzeturi fine", img: "https://images.unsplash.com/photo-1452195100486-9cc805987862?w=240&q=70&auto=format&fit=crop", desc: "Selecție curatoriată de brânzeturi maturate din Franța, Italia și Elveția, servite cu gem de smochine, nuci caramelizate și pâine crocantă." },
+      { name: "Parfait de căpșuni cu coulis de zmeură", img: "https://images.unsplash.com/photo-1488477304112-4944851de03d?w=240&q=70&auto=format&fit=crop", desc: "Desert rafinat pe bază de căpșuni de grădină, cu mousse aerată, coulis vibrant de zmeură și frunze de mentă cristalizată." }
+    ]
+  },
+  modern: {
+    title: "Meniu Modern",
+    subtitle: "Tendințe culinare contemporane cu influențe internaționale",
+    dishes: [
+      { name: "Burrata cu roșii heirloom și bazilicum", img: "https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=240&q=70&auto=format&fit=crop", desc: "Burrata cremoasă italiană servită pe roșii heirloom colorate, bazilicum proaspăt, ulei de măsline extravirgin și fleur de sel." },
+      { name: "Risotto cu ciuperci mixte și truffe", img: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=240&q=70&auto=format&fit=crop", desc: "Risotto cremos Arborio gătit lent cu mix de ciuperci sălbatice, parmezan maturat 36 de luni și ulei de truffe negru." },
+      { name: "Sous-vide de rață cu gel de yuzu", img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=240&q=70&auto=format&fit=crop", desc: "Piept de rață gătit sous-vide la temperatura precisă de 58°C, servit cu gel de yuzu japonez, legume pickled și spumă de lemongrass." },
+      { name: "Lava cake cu ciocolată belgiană 70%", img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=240&q=70&auto=format&fit=crop", desc: "Prăjitură caldă cu miez lichid de ciocolată Valrhona 70%, servită cu înghețată artizanală de vanilie Bourbon și pralin de alune." },
+      { name: "Cheesecake cu fructe de pădure", img: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=240&q=70&auto=format&fit=crop", desc: "Cremă fină de cream cheese pe biscuit graham artizanal, garnisită cu sos vibrant de fructe de pădure și mentă proaspătă." }
+    ]
+  }
+};
+
+function openMenu(key) {
+  const data = menuData[key];
+  if (!data) return;
+  document.getElementById('modalTitle').textContent = data.title;
+  document.getElementById('modalSubtitle').textContent = data.subtitle;
+  document.getElementById('modalDishes').innerHTML = data.dishes.map((d, i) =>
+    `<div class="dish">
+      <div class="dish-thumb"><img src="${d.img}" alt="${d.name}" loading="lazy"></div>
+      <div class="dish-info">
+        <span class="dish-num">0${i + 1}</span>
+        <div class="dish-name">${d.name}</div>
+        <p class="dish-desc">${d.desc}</p>
+      </div>
+    </div>`
+  ).join('');
+  const overlay = document.getElementById('menuOverlay');
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('menuModal').scrollTop = 0;
+}
+
+function closeMenu() {
+  const overlay = document.getElementById('menuOverlay');
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.mcard[data-menu]').forEach(function (card) {
+    card.addEventListener('click', function () { openMenu(card.dataset.menu); });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openMenu(card.dataset.menu); }
+    });
+  });
+  document.getElementById('menuClose').addEventListener('click', closeMenu);
+  document.getElementById('menuOverlay').addEventListener('click', function (e) {
+    if (e.target === this) closeMenu();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- count-up statistics ---- */
+  function animateCount(el) {
+    const target = parseFloat(el.dataset.count);
+    const dec = parseInt(el.dataset.decimals || '0', 10);
+    const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
+    if (reduce) {
+      const finalStr = dec > 0 ? target.toFixed(dec).replace('.', ',') : String(Math.round(target));
+      el.textContent = prefix + finalStr + suffix;
+      return;
+    }
+    const dur = 1700, start = performance.now();
+    function tick(now) {
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const val = target * eased;
+      const str = dec > 0 ? val.toFixed(dec).replace('.', ',') : String(Math.round(val));
+      el.textContent = prefix + str + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const statsWrap = document.getElementById('statsWrap');
+  if (statsWrap && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          statsWrap.querySelectorAll('.stat-num').forEach(animateCount);
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    io.observe(statsWrap);
+  } else if (statsWrap) {
+    statsWrap.querySelectorAll('.stat-num').forEach(animateCount);
+  }
+
+  /* ---- subtle hero parallax ---- */
+  const heroBg = document.querySelector('.hero-bg');
+  if (heroBg && !reduce) {
+    let ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          const y = window.scrollY;
+          if (y < window.innerHeight) heroBg.style.transform = 'translateY(' + (y * 0.18) + 'px)';
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  /* ---- mobile nav backdrop sync ---- */
+  (function () {
+    const backdrop = document.getElementById('mnavBackdrop');
+    const mnavEl = document.getElementById('mnav');
+    const hambEl = document.getElementById('hamb');
+    if (!backdrop || !mnavEl) return;
+    new MutationObserver(function () {
+      backdrop.classList.toggle('open', mnavEl.classList.contains('open'));
+    }).observe(mnavEl, { attributes: true, attributeFilter: ['class'] });
+    backdrop.addEventListener('click', function () {
+      mnavEl.classList.remove('open');
+      hambEl.classList.remove('open');
+      hambEl.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  })();
+
+  /* ---- testimonials carousel ---- */
+  (function () {
+    const track = document.getElementById('revTrack');
+    if (!track) return;
+    const slides = track.querySelectorAll('.rev-slide');
+    const dots = document.querySelectorAll('.rev-dot');
+    let cur = 0, timer;
+
+    function goTo(i) {
+      slides[cur].classList.remove('active');
+      cur = (i + slides.length) % slides.length;
+      slides[cur].classList.add('active');
+      dots.forEach(function (d, idx) { d.classList.toggle('active', idx === cur); });
+    }
+    function startAuto() { timer = setInterval(function () { goTo(cur + 1); }, 5000); }
+    function stopAuto() { clearInterval(timer); }
+
+    document.getElementById('revNext').addEventListener('click', function () { stopAuto(); goTo(cur + 1); startAuto(); });
+    document.getElementById('revPrev').addEventListener('click', function () { stopAuto(); goTo(cur - 1); startAuto(); });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { stopAuto(); goTo(i); startAuto(); });
+    });
+
+    var sx = 0;
+    track.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; stopAuto(); }, { passive: true });
+    track.addEventListener('touchend', function (e) {
+      var dx = sx - e.changedTouches[0].clientX;
+      if (Math.abs(dx) > 44) goTo(cur + (dx > 0 ? 1 : -1));
+      startAuto();
+    });
+
+    startAuto();
+  })();
+});
+</script>
+
+</body>
+</html>
